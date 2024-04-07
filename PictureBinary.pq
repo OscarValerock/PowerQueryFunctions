@@ -32,16 +32,13 @@ let
 in
     AddIndexColumn,
     documentation = [
-        Documentation.Name =  " Picture.binary",
-        Documentation.Description = " Returns a list of hours (datetime) that lie between the <code>Start</code> and <code>End</code>  ",
-        Documentation.LongDescription = " Returns a list of hours (datetime) that lie between the <code>Start</code> and <code>End</code>  ",
-        Documentation.Category = " DateTime ",
+        Documentation.Name =  " PictureBinary",
+        Documentation.Description = "Returns the base64 encoded binary of a picture, broken in 30K chunks, in a table which can be later stitche via DAX",
+        Documentation.LongDescription = "Returns the base64 encoded binary of a picture, broken in 30K chunks, in a table which can be later stitche via DAX",
+        Documentation.Category = "File Operations",
         Documentation.Source = " . https://goo.gl/1mJHpP . ",
         Documentation.Version = " 1.0 ",
-        Documentation.Author = " BillSzysz https://goo.gl/1mJHpP . ",
-        Documentation.Examples = {[Description =  "  ",
-        Code = " DateTime.HoursBetween( #datetime(2018, 7, 8, 1, 0, 0), #datetime(2018, 7, 8, 4, 29, 0) ) ",
-        Result = " {""08/07/2018 01:00:00"", ""08/07/2018 02:00:00"", ""08/07/2018 03:00:00"", ""08/07/2018 04:00:00""} "]}
+        Documentation.Author = "Oscar martinez"
     ]
 
 in
