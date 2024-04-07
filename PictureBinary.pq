@@ -1,10 +1,6 @@
 let
-
     picresult = (InputTable as table, InputBinaryZBPosition as number, InputKeyZBPosition as number ) as table  =>
-
-let
-    
-    
+let    
     //Get list of files in folder
     Source = (InputTable),
     //Converts table that contians image to list
@@ -33,13 +29,11 @@ in
     AddIndexColumn,
     documentation = [
         Documentation.Name =  " PictureBinary",
-        Documentation.Description = "Returns the base64 encoded binary of a picture, broken in 30K chunks, in a table which can be later stitche via DAX",
-        Documentation.LongDescription = "Returns the base64 encoded binary of a picture, broken in 30K chunks, in a table which can be later stitche via DAX",
+        Documentation.Description = "Returns the base64 encoded binary of a picture, broken in 30K chunks, in a table which can be later stitched via DAX",
         Documentation.Category = "File Operations",
-        Documentation.Source = " . https://goo.gl/1mJHpP . ",
+        Documentation.Source = "",
         Documentation.Version = " 1.0 ",
-        Documentation.Author = "Oscar martinez"
+        Documentation.Author = "Oscar Martínez"
     ]
-
 in
     Value.ReplaceType(picresult, Value.ReplaceMetadata(Value.Type(picresult), documentation))  
