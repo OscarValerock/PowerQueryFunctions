@@ -1,15 +1,24 @@
-
-
 let
 
     GitHubUser = "OscarValerock",
     GitHubRepo = "PowerQueryFunctions",
     BaseURL = "https://api.github.com/repos/",
 
+    #"Get Trees all trees" = Json.Document(
+        Web.Contents(
+            BaseURL,[
+                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/main",
+                 Query = []
+             ]
+        )
+    ),
+    funtionTree = #"Get Trees all trees"[tree],
+    filterList = List.Select(funtionTree, each _[path] = "Functions"){0}[sha],
+
     #"Get Trees from functions" = Json.Document(
         Web.Contents(
             BaseURL,[
-                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/eeb0374df2bd7b5982b06b03a0fb5fc739373fba",
+                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"&filterList,
                  Query = []
              ]
         )
@@ -80,6 +89,7 @@ let
                         Documentation.Version = Documentation.Version,
                         Duration.Days = Duration.Days,
                         Int64.Type = Int64.Type,
+                        Json.Document= Json.Document,
                         List.Combine = List.Combine,
                         List.Dates = List.Dates,
                         List.Transform = List.Transform,
@@ -91,6 +101,7 @@ let
                         Table.FromList = Table.FromList,
                         Table.ToRows = Table.ToRows,
                         Text.From = Text.From,
+                        Text.ToBinary = Text.ToBinary,
                         Value.ReplaceMetadata = Value.ReplaceMetadata,
                         Value.ReplaceType = Value.ReplaceType,
                         Value.Type = Value.Type,
@@ -110,5 +121,3 @@ let
     #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
     #"Renamed Columns"
-
-
