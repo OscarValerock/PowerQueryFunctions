@@ -2,6 +2,11 @@
 ## Introduction
 This repository contains a collection of Power Query functions.
 
+## History
+This repository was inspired by [Injae Park's YouTube video](https://www.youtube.com/watch?v=GXFxiEVAmfI) and [repository](https://github.com/PowerBIPark/PowerBI_MQueryTest) on how to version control Power BI; specially useful were the references he included: 
+
+- 
+
 
 ## Usage
 1. Open the file [M.pq](M.pq) and copy the code.
