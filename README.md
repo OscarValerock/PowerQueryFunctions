@@ -10,8 +10,10 @@ This repository was inspired by [Injae Park's YouTube video](https://www.youtube
 - Kim Burgess' [repository, m-tools](https://github.com/acaprojects/m-tools/blob/master/M.pq) was very useful when defining the usage of the functions and the readme file.
 
 ## Usage
-### Library installation
-This library is imported into Power Query by copying and 
+### Library installation and usage
+
+This library is "imported" into Power Query by following this steps:
+
 1. Open the file [M.pq](M.pq) and copy the code.
 2. Open an advanced editor in Power Query and paste the code, rename the query to "M".
 3. Use the functions as records on M. For example, PictureBinary, which arguments are one table and two numbers, can be invoked like: 
@@ -20,6 +22,10 @@ This library is imported into Power Query by copying and
 
 ## Contributing
 Contributions are welcome! If you have any new functions or improvements to existing ones, feel free to submit a pull request.
+
+Please contribute in the folder category that best suits. If the folder does not exist, create it. 
+
+In order 
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credit on the code you use. Plagiarism will not be tolerated.
@@ -30,6 +36,6 @@ Contributions are welcome! If you have any new functions or improvements to exis
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODEzOTU3NDAsLTUzMjA2MDQzLC0xNj
-c1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbMTQ0NTA0MjUwNywtNTMyMDYwNDMsLTE2Nz
+U0Mzc2ODhdfQ==
 -->
