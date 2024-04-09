@@ -16,7 +16,7 @@ This library is "imported" into Power Query by following this steps:
 
 1. Open the file [M.pq](M.pq) and copy the code.
 2. Open an advanced editor in Power Query and paste the code, rename the query to "M".
-3. Use the functions as records on M. For example, PictureBinary, which arguments are one table and two numbers, can be invoked like: 
+3. Use the functions as records on M. For example, PictureBinary, which is located in the General Folder, has as arguments one table and two numbers, can be invoked like: 
 
 `M[General.PictureBinary](table, number, number)`
 
@@ -36,6 +36,6 @@ The functions you create will only work if the all the Power Query native functi
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4Mjk4Mjk4NiwtNTMyMDYwNDMsLTE2Nz
-U0Mzc2ODhdfQ==
+eyJoaXN0b3J5IjpbMTMxNTgxODU0NiwxMTgyOTgyOTg2LC01Mz
+IwNjA0MywtMTY3NTQzNzY4OF19
 -->
