@@ -3,8 +3,19 @@ let
     GitHubUser = "OscarValerock",
     GitHubRepo = "PowerQueryFunctions",
     BaseURL = "https://api.github.com/repos/",
-    
-    #"Get Functions from Github" = (tree as text) => Json.Document(
+
+    #"Get Trees from functions" = Json.Document(
+        Web.Contents(
+            BaseURL,[
+                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/eeb0374df2bd7b5982b06b03a0fb5fc739373fba",
+                 Query = []
+             ]
+        )
+    ),
+    tree = #"Get Trees from functions"[tree],
+    #"Converted to Table" = Table.FromList(tree, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"path", "sha"}, {"Type", "Sha"}),
+    #"Get Functions from Github fx" = (tree as text) => Json.Document(
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"& tree,
@@ -12,18 +23,17 @@ let
              ]
         )
     )[tree],
-    #"Get Functions from trees" = List.Transform(
+    #"Get Functions from Github" = Table.TransformColumns(
+        #"Expanded Column1",
         {
-        // Get the rest of trees from this URL: https://api.github.com/repos/OscarValerock/PowerQueryFunctions/git/trees/509869d40aefc0eb766da67dede8988956f41208
-        "b9f2b7c89bdd3f96eafd2078aefba7debe488b1c" // General functions tree
-        },
-        #"Get Functions from Github" 
+            "Sha", each #"Get Functions from Github fx"(_)
+        }
     ),
-    #"Converted to Table" = Table.FromList( #"Get Functions from trees", Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-    #"Expanded Column2" = Table.ExpandListColumn(#"Converted to Table", "Column1"),
-    #"Expanded Column3" = Table.ExpandRecordColumn(#"Expanded Column2", "Column1", {"path", "url"}, {"path", "url"}),
-    #"Filtered Rows" = Table.SelectRows(#"Expanded Column3", each Text.Contains([path], ".pq")),
-    #"Extracted Text After Delimiter" = Table.TransformColumns(#"Filtered Rows", {{"url", each Text.AfterDelimiter(_, "/", {0, RelativePosition.FromEnd}), type text}}),
+    #"Expanded Sha" = Table.ExpandListColumn(#"Get Functions from Github", "Sha"),
+    #"Expanded Sha1" = Table.ExpandRecordColumn(#"Expanded Sha", "Sha", {"path", "url"}, {"Path", "url"}),
+    #"Filtered Rows" = Table.SelectRows(#"Expanded Sha1", each Text.Contains([Path], ".pq")),
+    #"Replaced Value" = Table.ReplaceValue(#"Filtered Rows",".pq","",Replacer.ReplaceText,{"Path"}),
+    #"Extracted Text After Delimiter" = Table.TransformColumns(#"Replaced Value", {{"url", each Text.AfterDelimiter(_, "/", {0, RelativePosition.FromEnd}), type text}}),
     #"Get PQ functions fx" = (relativePath as text) => 
         let 
             #"Get functions fx" = Json.Document(Web.Contents(
@@ -165,6 +175,8 @@ let
                         DateTimeZone.Type = DateTimeZone.Type, 
                         DateTimeZone.UtcNow = DateTimeZone.UtcNow, 
                         DateTimeZone.ZoneHours = DateTimeZone.ZoneHours, 
+                        Day.Monday = Day.Monday,
+                        Day.Friday = Day.Friday,
                         DateTimeZone.ZoneMinutes = DateTimeZone.ZoneMinutes, 
                         Decimal.From = Decimal.From, 
                         Decimal.Type = Decimal.Type, 
@@ -195,6 +207,7 @@ let
                         Function.IsDataSource = Function.IsDataSource, 
                         Function.ScalarVector = Function.ScalarVector, 
                         Function.Type = Function.Type, 
+                        Int64.Type = Int64.Type,
                         Lines.FromBinary = Lines.FromBinary, 
                         Lines.FromText = Lines.FromText, 
                         Lines.ToBinary = Lines.ToBinary, 
@@ -583,6 +596,8 @@ let
         {
             "url", each #"Get PQ functions fx"(_)
         }
-    )
+    ),
+    #"Merged Columns" = Table.CombineColumns(#"Get PQ functions",{"Type","Path"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"Name"),
+    #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
-    #"Get PQ functions"
+    #"Renamed Columns"
