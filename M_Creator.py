@@ -1,4 +1,14 @@
+import os
+import re
 
+# Regex pattern to match Power Query functions (e.g., Namespace.Function) but not purely numeric patterns
+pattern =  r'\b\w+\.\w+\b'
+
+# Array of strings to exclude and exclude
+exclude_strings = ['gorilla.bi']
+manual_strings = ['Web.Contents']
+
+M_Code = """
 
 let
 
@@ -50,51 +60,7 @@ let
                         Binary.FromText(#"Get functions fx")
                     ),
                     [ 
-                        Binary.ToText = Binary.ToText,
-                        BinaryEncoding.Base64 = BinaryEncoding.Base64,
-                        Date.AddDays = Date.AddDays,
-                        Date.Day = Date.Day,
-                        Date.DayOfWeek = Date.DayOfWeek,
-                        Date.DayOfWeekName = Date.DayOfWeekName,
-                        Date.DayOfYear = Date.DayOfYear,
-                        Date.DaysInMonth = Date.DaysInMonth,
-                        Date.EndOfMonth = Date.EndOfMonth,
-                        Date.EndOfYear = Date.EndOfYear,
-                        Date.From = Date.From,
-                        Date.Month = Date.Month,
-                        Date.MonthName = Date.MonthName,
-                        Date.QuarterOfYear = Date.QuarterOfYear,
-                        Date.StartOfMonth = Date.StartOfMonth,
-                        Date.StartOfWeek = Date.StartOfWeek,
-                        Date.ToText = Date.ToText,
-                        Date.Type = Date.Type,
-                        Date.Year = Date.Year,
-                        DateTime.LocalNow = DateTime.LocalNow,
-                        Day.Friday = Day.Friday,
-                        Day.Monday = Day.Monday,
-                        Documentation.Author = Documentation.Author,
-                        Documentation.Category = Documentation.Category,
-                        Documentation.Description = Documentation.Description,
-                        Documentation.Name = Documentation.Name,
-                        Documentation.Source = Documentation.Source,
-                        Documentation.Version = Documentation.Version,
-                        Duration.Days = Duration.Days,
-                        Int64.Type = Int64.Type,
-                        List.Combine = List.Combine,
-                        List.Dates = List.Dates,
-                        List.Transform = List.Transform,
-                        Number.From = Number.From,
-                        Splitter.SplitByNothing = Splitter.SplitByNothing,
-                        Splitter.SplitTextByRepeatedLengths = Splitter.SplitTextByRepeatedLengths,
-                        Table.AddColumn = Table.AddColumn,
-                        Table.AddIndexColumn = Table.AddIndexColumn,
-                        Table.FromList = Table.FromList,
-                        Table.ToRows = Table.ToRows,
-                        Text.From = Text.From,
-                        Value.ReplaceMetadata = Value.ReplaceMetadata,
-                        Value.ReplaceType = Value.ReplaceType,
-                        Value.Type = Value.Type,
-                        Web.Contents = Web.Contents
+#TextToReplace
                     ]
                 )
         in
@@ -111,4 +77,68 @@ let
 in
     #"Renamed Columns"
 
+
+"""
+def process_file(file_path):
+    """
+    Process a single file and extract Power Query functions.
+
+    Args:
+        file_path (str): The path to the file to be processed.
+
+    Returns:
+        list: A list of extracted Power Query functions.
+    """
+    with open(file_path, 'r') as file:
+        file_content = file.read()
+        matches = re.findall(pattern, file_content)
+        matches = [match for match in matches if not re.match(r'^\d+\.\d+$', match) and match not in exclude_strings]
+        return matches
+
+def process_directory(directory):
+    """
+    Traverse the directory structure and process each file to extract Power Query functions.
+
+    Args:
+        directory (str): The directory to be traversed.
+
+    Returns:
+        list: A list of extracted Power Query functions.
+    """
+    matches = []
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            file_path = os.path.join(root, file)
+            matches.extend(process_file(file_path))
+    return matches
+
+# Process the "Functions" folder
+matches = process_directory('Functions')
+
+# Deduplicate the list while preserving order
+unique_functions = list(dict.fromkeys(matches))
+
+# Append manual strings to the final list
+unique_functions.extend(manual_strings)
+
+# Sort the list of unique functions
+unique_functions.sort()
+
+unique_functions = list(set(unique_functions))
+unique_functions.sort()
+
+print("Extracted Power Query functions (excluding numbers and specified strings):")
+result = ""
+for i, func in enumerate(unique_functions):
+    if i == len(unique_functions) - 1:
+        result += f"                        {func} = {func}"
+    else:
+        result += f"                        {func} = {func},\n"
+
+
+M_Code = M_Code.replace("#TextToReplace", result)
+
+print(M_Code)
+with open('M.pq', 'w') as file:
+    file.write(M_Code)
 
