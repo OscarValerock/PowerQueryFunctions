@@ -1,5 +1,7 @@
 (startYear as number ) =>
 
+//https://gorilla.bi/power-query/date-table/
+
 let
     Today = Date.From( DateTime.LocalNow() ),
     StartDate = #date(startYear, 1, 1),
