@@ -25,7 +25,7 @@ Contributions are welcome! If you have any new functions or improvements to exis
 
 Please contribute in the folder category that best suits. If the folder does not exist, create it. 
 
-In order 
+The functions you create will only work if the all the Power Query native functions used are declared in the [M.pq](M.pq) file. For this 
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credit on the code you use. Plagiarism will not be tolerated.
@@ -36,6 +36,6 @@ In order
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0NTA0MjUwNywtNTMyMDYwNDMsLTE2Nz
+eyJoaXN0b3J5IjpbMTM4NDg0Mzc2OCwtNTMyMDYwNDMsLTE2Nz
 U0Mzc2ODhdfQ==
 -->
