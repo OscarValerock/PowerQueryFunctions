@@ -1,6 +1,6 @@
 # Power Query Functions
 ## Introduction
-This repository contains a collection of Power Query functions, the intention is to 
+This repository contains a collection of Power Query functions, the intention is to give the Power Query community the possibility of using tested and proved functions without having to write them from scratch. 
 
 ## History
 ### This M functions library stands on the shoulders of giants:
@@ -28,5 +28,5 @@ Contributions are welcome! If you have any new functions or improvements to exis
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg3MTI4MTY0LC0xNjc1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
 -->
