@@ -25,7 +25,7 @@ Contributions are welcome! If you have any new functions or improvements to exis
 
 Please contribute in the folder category that best suits. If the folder does not exist, create it. 
 
-The functions you create will only work if the all the Power Query native functions used are declared in the [M.pq](M.pq) file. For this 
+The functions you create will only work if the all the Power Query native functions used are declared in the [M.pq](M.pq) file. You can run the  [M_Creator.py](M_Creator.py) Python script and it will locate all the functions via regex and rewrite a M.pq file. 
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credit on the code you use. Plagiarism will not be tolerated.
@@ -36,6 +36,6 @@ The functions you create will only work if the all the Power Query native functi
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NDg0Mzc2OCwtNTMyMDYwNDMsLTE2Nz
+eyJoaXN0b3J5IjpbMTE4Mjk4Mjk4NiwtNTMyMDYwNDMsLTE2Nz
 U0Mzc2ODhdfQ==
 -->
