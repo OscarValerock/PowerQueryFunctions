@@ -10,7 +10,7 @@ This repository was inspired by [Injae Park's YouTube video](https://www.youtube
 
 ## Usage
 1. Open the file [M.pq](M.pq) and copy the code.
-2. Open an advance editor in Power Query and paste the code, rename the query to "M".
+2. Open an advanced editor in Power Query and paste the code, rename the query to "M".
 3. Use the functions as records on M. For example, PictureBinary, which arguments are one table and two numbers, can be invoked like: 
 
 `M[General.PictureBinary](table, number, number)`
