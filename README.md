@@ -18,5 +18,11 @@ This repository was inspired by [Injae Park's YouTube video](https://www.youtube
 ## Contributing
 Contributions are welcome! If you have any new functions or improvements to existing ones, feel free to submit a pull request.
 
+### Contributing guidelines
+1. Make sure to add the corresponding credit on the code you use. Plagiarism will not be tolerated.
+2. Document your functions, this is a great place to give credits.
+3. Comment your code.
+4. have fun!
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
