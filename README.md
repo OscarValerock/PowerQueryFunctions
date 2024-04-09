@@ -1,4 +1,4 @@
-# PowerQueryFunctions
+# Power Query Functions
 ## Introduction
 This repository contains a collection of Power Query functions.
 
