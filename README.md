@@ -27,3 +27,6 @@ Contributions are welcome! If you have any new functions or improvements to exis
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE2NzU0Mzc2ODhdfQ==
+-->
