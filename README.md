@@ -4,7 +4,7 @@ This repository contains a collection of Power Query functions.
 
 ## History
 ### This repository and function library stands on the shoulders of giants:
-This repository was inspired by [Injae Park's YouTube video](https://www.youtube.com/watch?v=GXFxiEVAmfI) and [repository](https://github.com/PowerBIPark/PowerBI_MQueryTest) on how to version control Power BI, his research and code is a corner stone of this project; specially useful were the references he included: 
+This repository was inspired by [Injae Park's YouTube video](https://www.youtube.com/watch?v=GXFxiEVAmfI) and [repository](https://github.com/PowerBIPark/PowerBI_MQueryTest) on how to version control M Code, his research and code is a corner stone of this project; also, specially useful were the references he included: 
 
 - Imke Feldman's [post on expression evaluate](https://www.thebiccountant.com/2018/05/17/automatically-create-function-record-for-expression-evaluate-in-power-bi-and-power-query/) came particularly handy when dealing with documentation. 
 - Kim Burgess' [repository, m-tools](https://github.com/acaprojects/m-tools/blob/master/M.pq) was very useful when defining the usage of the functions and the readme file.
