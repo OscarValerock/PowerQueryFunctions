@@ -16,10 +16,21 @@ let
     GitHubRepo = "PowerQueryFunctions",
     BaseURL = "https://api.github.com/repos/",
 
+    #"Get Trees all trees" = Json.Document(
+        Web.Contents(
+            BaseURL,[
+                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/main",
+                 Query = []
+             ]
+        )
+    ),
+    funtionTree = #"Get Trees all trees"[tree],
+    filterList = List.Select(funtionTree, each _[path] = "Functions"){0}[sha],
+
     #"Get Trees from functions" = Json.Document(
         Web.Contents(
             BaseURL,[
-                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/eeb0374df2bd7b5982b06b03a0fb5fc739373fba",
+                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"/"&filterList,
                  Query = []
              ]
         )
