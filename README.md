@@ -1,13 +1,12 @@
 
 # Power Query Functions
 ## Introduction
-This repository contains a collection of Power Query functions intended for ease of use. 
 
-Libraries play a crucial role in programming, offering reusable functions that save time. Power Query, though powerful for data manipulation, lacks this library support, leading to inefficiencies and duplicated efforts among developers.
+This repository offers a suite of Power Query functions and scripts, aiming to streamline data manipulation tasks. It addresses the lack of a centralized library system in Power Query, helping developers avoid redundant efforts and improve efficiency.
 
-This repository attempts to fill that void by providing a collection of Power Query functions and scripts. Despite Power Query's limitations, such as its unique M code environment, this project encourages community collaboration to enhance its capabilities, making data transformation more efficient.
+Power Query's absence of shared libraries leads to unnecessary duplication and inefficiencies in development. By aggregating reusable code, this project encourages more efficient data handling and reduces development time.
 
-This repository represents an approach to bridge this gap by offering a collection of reusable Power Query functions and scripts. Although not perfect due to Power Query's inherent limitations, such as its M code environment and data privacy settings, which may restrict some functionalities, this initiative aims to foster a community-driven development of Power Query libraries. By sharing knowledge and code, developers can overcome some of these limitations, streamlining their workflows and pushing the boundaries of what's possible in Power Query.
+Despite Power Query's limitations, such as its specific M code environment, this initiative promotes community collaboration to expand its capabilities. Through sharing code and expertise, it seeks to overcome inherent challenges and push the boundaries of Power Query's functionality.
 
 
 ### This M functions library stands on the shoulders of giants:
@@ -43,7 +42,7 @@ The functions you create will only work if all the Power Query native functions 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NjIyODU5NywyMTA0NzczNywxMzE1OD
-E4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4
-XX0=
+eyJoaXN0b3J5IjpbLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMT
+A0NzczNywxMzE1ODE4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQz
+LC0xNjc1NDM3Njg4XX0=
 -->
