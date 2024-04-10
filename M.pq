@@ -70,7 +70,6 @@ let
                         Date.DayOfYear = Date.DayOfYear,
                         Date.DaysInMonth = Date.DaysInMonth,
                         Date.EndOfMonth = Date.EndOfMonth,
-                        Date.EndOfYear = Date.EndOfYear,
                         Date.From = Date.From,
                         Date.Month = Date.Month,
                         Date.MonthName = Date.MonthName,
@@ -131,5 +130,3 @@ let
     #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
     #"Renamed Columns"
-
-
