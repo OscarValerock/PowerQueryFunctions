@@ -5,8 +5,8 @@ import re
 pattern =  r'\b\w+\.\w+\b'
 
 # Array of strings to exclude and exclude
-exclude_strings = ['gorilla.bi']
-manual_strings = ['Web.Contents']
+exclude_strings = ['gorilla.bi', 'api.openai' ,'bibb.pro', 'community.powerbi', 'www.linkedin', 'odata.nextLink']
+manual_strings = ['Web.Contents' ]
 
 M_Code = """
 
@@ -30,7 +30,7 @@ let
     #"Get Trees from functions" = Json.Document(
         Web.Contents(
             BaseURL,[
-                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"/"&filterList,
+                 RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"&filterList,
                  Query = []
              ]
         )
@@ -87,8 +87,6 @@ let
     #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
     #"Renamed Columns"
-
-
 """
 def process_file(file_path):
     """

@@ -1,3 +1,5 @@
+
+
 let
 
     GitHubUser = "OscarValerock",
@@ -84,12 +86,19 @@ let
                         Documentation.Author = Documentation.Author,
                         Documentation.Category = Documentation.Category,
                         Documentation.Description = Documentation.Description,
+                        Documentation.FieldCaption = Documentation.FieldCaption,
+                        Documentation.LongDescription = Documentation.LongDescription,
                         Documentation.Name = Documentation.Name,
+                        Documentation.SampleValues = Documentation.SampleValues,
                         Documentation.Source = Documentation.Source,
                         Documentation.Version = Documentation.Version,
                         Duration.Days = Duration.Days,
+                        ExtraValues.Error = ExtraValues.Error,
+                        Formatting.IsCode = Formatting.IsCode,
+                        Formatting.IsMultiLine = Formatting.IsMultiLine,
+                        Function.InvokeAfter = Function.InvokeAfter,
                         Int64.Type = Int64.Type,
-                        Json.Document= Json.Document,
+                        Json.Document = Json.Document,
                         List.Combine = List.Combine,
                         List.Dates = List.Dates,
                         List.Transform = List.Transform,
@@ -101,6 +110,7 @@ let
                         Table.FromList = Table.FromList,
                         Table.ToRows = Table.ToRows,
                         Text.From = Text.From,
+                        Text.Replace = Text.Replace,
                         Text.ToBinary = Text.ToBinary,
                         Value.ReplaceMetadata = Value.ReplaceMetadata,
                         Value.ReplaceType = Value.ReplaceType,
@@ -121,3 +131,5 @@ let
     #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
     #"Renamed Columns"
+
+
