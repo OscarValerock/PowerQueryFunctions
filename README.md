@@ -2,7 +2,7 @@
 # Power Query Functions
 ## Introduction
 This repository contains a collection of Power Query functions intended for easy of use. 
-
+Libraries are a important component of many 
 The intention is to give the Power Query community the possibility of using tested and proven functions without having to write them from scratch. 
 
 ## History
@@ -42,6 +42,6 @@ The functions you create will only work if all the Power Query native functions 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTkzNzkzOCwxMzE1ODE4NTQ2LDExOD
-I5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbMjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOT
+gyOTg2LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
 -->
