@@ -29,13 +29,13 @@ The functions you create will only work if the all the Power Query native functi
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credit on the code you use. Plagiarism will not be tolerated.
-2. Document your functions, this is a great place to give credits.
+2. Document your functions, for this you can use the file  [M_FxDocTemplate.pq](https://github.com/OscarValerock/PowerQueryFunctions/blob/main/M_FxDocTemplate.pq "M_FxDocTemplate.pq")
 3. Comment your code.
-4. have fun!
+4. Have fun! 🎉
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNTgxODU0NiwxMTgyOTgyOTg2LC01Mz
-IwNjA0MywtMTY3NTQzNzY4OF19
+eyJoaXN0b3J5IjpbMjAzNDMxNjg1MSwxMzE1ODE4NTQ2LDExOD
+I5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
 -->
