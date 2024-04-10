@@ -21,10 +21,10 @@ let
                 <p><b>Date Table Generator</b></p>
                 <li><b>Creator: </b>Rick de Groot.</li>
                 <li><b>Web: </b>https://gorilla.bi/power-query/date-table/</li>
-                <li>------------------------------------------------------<\li>
+                <li>------------------------------------------------------</li>
                 <li><b>Editor: </b>Oscar Martinez.</li>
                 <li><b>Web: </b>https://bibb.pro</li>
-                <li><b>LinkedIn:</b> https://www.linkedin.com/in/</li>
+                <li><b>LinkedIn: </b>https://www.linkedin.com/in/oscarmartinezv/</li>
                 <p>This function generates a date table with a range of dates from the start year to the end year.</p>
                 <p><b>Parameters:</b></p>
                 <ul>
