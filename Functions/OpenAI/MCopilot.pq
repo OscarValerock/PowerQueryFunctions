@@ -67,7 +67,7 @@ let
         ],
         
         // Execute the web request and parse the JSON response.
-        Source = Json.Document(Web.ContentsTest(url, [
+        Source = Json.Document(Web.Contents(url, [
             Headers = Headers,
             Content = Text.ToBinary(body)
         ])),
