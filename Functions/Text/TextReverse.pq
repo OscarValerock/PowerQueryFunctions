@@ -7,8 +7,9 @@ let
             Formatting.IsCode = false
         ])
     ) as text meta [
-        Documentation.Name = "Text Reverse",
-        Documentation.Description = "Reverses the order of characters in a text value.",
+        Documentation.Name = " Text Reverse ",
+        Documentation.LongDescription = " Reverses the order of characters in a text string. ",
+        Documentation.Author = " Alexis Olson ",
         Documentation.Examples =  {[Description =  " ", Code = " TextReverse(""Hello World!"") ", Result = " !dlroW olleH "]}
     ],
     // Define the main function
