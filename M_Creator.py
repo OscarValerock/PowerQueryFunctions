@@ -13,7 +13,6 @@ exclude_strings = [
                    'Documentation.LongDescription',
                    'Documentation.Name',
                    'Documentation.SampleValues',
-                   'Duration.Days',
                    'ExtraValues.Error',
                    'Formatting.IsCode',
                    'Formatting.IsMultiLine',

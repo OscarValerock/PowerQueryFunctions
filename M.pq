@@ -82,6 +82,7 @@ let
                         DateTime.LocalNow = DateTime.LocalNow,
                         Day.Friday = Day.Friday,
                         Day.Monday = Day.Monday,
+                        Duration.Days = Duration.Days,
                         Function.InvokeAfter = Function.InvokeAfter,
                         Int64.Type = Int64.Type,
                         Json.Document = Json.Document,
