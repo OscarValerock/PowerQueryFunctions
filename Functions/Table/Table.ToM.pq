@@ -8,7 +8,7 @@ let
       Formatting.IsMultiLine = false,
       Formatting.IsCode = false
     ])
-  ) as any meta [
+  ) as text meta [
     Documentation.Name = "Table.ToM",
     Documentation.Author = "Alexis Olson",
     Documentation.LongDescription = 
@@ -157,3 +157,4 @@ let
 in
   // Apply the function metadata to myFunction.
   Value.ReplaceType(myFunction, metaDocumentation)
+  
