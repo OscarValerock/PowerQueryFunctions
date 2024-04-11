@@ -5,8 +5,25 @@ import re
 pattern =  r'\b\w+\.\w+\b'
 
 # Array of strings to exclude and exclude
-exclude_strings = ['gorilla.bi', 'api.openai' ,'bibb.pro', 'community.powerbi', 'www.linkedin', 'odata.nextLink']
-manual_strings = ['Web.Contents' ]
+exclude_strings = [
+                   'api.openai' ,
+                   'bibb.pro',
+                   'community.powerbi',
+                   'Documentation.FieldCaption',
+                   'Documentation.LongDescription',
+                   'Documentation.Name',
+                   'Documentation.SampleValues',
+                   'Duration.Days',
+                   'ExtraValues.Error',
+                   'Formatting.IsCode',
+                   'Formatting.IsMultiLine',
+                   'gorilla.bi',
+                   'odata.nextLink',
+                   'Web.Contents', #Unfortunately adding this function to the M code will create a dynamic error :(
+                   'www.linkedin',
+                   'youtu.be',
+                ]
+manual_strings = [ ]
 
 M_Code = """
 

@@ -82,19 +82,6 @@ let
                         DateTime.LocalNow = DateTime.LocalNow,
                         Day.Friday = Day.Friday,
                         Day.Monday = Day.Monday,
-                        Documentation.Author = Documentation.Author,
-                        Documentation.Category = Documentation.Category,
-                        Documentation.Description = Documentation.Description,
-                        Documentation.FieldCaption = Documentation.FieldCaption,
-                        Documentation.LongDescription = Documentation.LongDescription,
-                        Documentation.Name = Documentation.Name,
-                        Documentation.SampleValues = Documentation.SampleValues,
-                        Documentation.Source = Documentation.Source,
-                        Documentation.Version = Documentation.Version,
-                        Duration.Days = Duration.Days,
-                        ExtraValues.Error = ExtraValues.Error,
-                        Formatting.IsCode = Formatting.IsCode,
-                        Formatting.IsMultiLine = Formatting.IsMultiLine,
                         Function.InvokeAfter = Function.InvokeAfter,
                         Int64.Type = Int64.Type,
                         Json.Document = Json.Document,
@@ -111,10 +98,7 @@ let
                         Text.From = Text.From,
                         Text.Replace = Text.Replace,
                         Text.ToBinary = Text.ToBinary,
-                        Value.ReplaceMetadata = Value.ReplaceMetadata,
-                        Value.ReplaceType = Value.ReplaceType,
-                        Value.Type = Value.Type,
-                        Web.Contents = Web.Contents
+                        Value.ReplaceType = Value.ReplaceType
                     ]
                 )
         in
