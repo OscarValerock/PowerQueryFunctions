@@ -1,5 +1,3 @@
-
-
 # Power Query Functions
 ## Introduction
 
@@ -49,8 +47,8 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTEyODUyMTQsLTYzMDQ5ODQ2Niw2OTkyOT
-czMjIsLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMTA0NzczNywx
-MzE1ODE4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1ND
-M3Njg4XX0=
+eyJoaXN0b3J5IjpbODY3ODY3OTA2LDUxMjg1MjE0LC02MzA0OT
+g0NjYsNjk5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOTYyMjg1OTcs
+MjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2LC01MzIwNj
+A0MywtMTY3NTQzNzY4OF19
 -->
