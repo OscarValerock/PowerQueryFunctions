@@ -39,12 +39,14 @@ The functions you create will only work if all the Power Query native functions 
 3. Comment your code.
 4. Have fun! 🎉
 
-##O
+## Other libraries
+Below, you will find other handy PowerQuery libraries that could come in handy: 
+1. 
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MTAxMjQ3MywtMTE2Mzc5MjI2NiwxMD
-k2MjI4NTk3LDIxMDQ3NzM3LDEzMTU4MTg1NDYsMTE4Mjk4Mjk4
-NiwtNTMyMDYwNDMsLTE2NzU0Mzc2ODhdfQ==
+eyJoaXN0b3J5IjpbNjk5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOT
+YyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2
+LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
 -->
