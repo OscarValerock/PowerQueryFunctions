@@ -32,7 +32,7 @@ This library is "imported" into Power Query by following these steps:
 
 Please contribute in the folder category that best suits. If the folder does not exist, create it. 
 
-The functions you create will only work if all the Power Query native functions used are declared in the [M.pq](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
+The functions you create will only work if all the Power Query native functions used are declared in the [**M.pq**](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credits to your code. Plagiarism will not be tolerated.
@@ -49,7 +49,8 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMDQ5ODQ2Niw2OTkyOTczMjIsLTExNj
-M3OTIyNjYsMTA5NjIyODU5NywyMTA0NzczNywxMzE1ODE4NTQ2
-LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbNTEyODUyMTQsLTYzMDQ5ODQ2Niw2OTkyOT
+czMjIsLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMTA0NzczNywx
+MzE1ODE4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1ND
+M3Njg4XX0=
 -->
