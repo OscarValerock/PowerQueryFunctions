@@ -43,12 +43,13 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 1. [M-tools](https://github.com/acaprojects/m-tools/tree/master) by Kim Burgess
 2. [M](https://github.com/ImkeF/M) by Imke Feldmann
 3. [M Custom Functions](https://github.com/tirnovar/m-custom-functions) by Štěpán Rešl 
+4. [PowerQueryLib](https://github.com/ninmonkey/Ninmonkey.PowerQueryLib) by NinMonkey
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY3ODY3OTA2LDUxMjg1MjE0LC02MzA0OT
-g0NjYsNjk5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOTYyMjg1OTcs
-MjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2LC01MzIwNj
-A0MywtMTY3NTQzNzY4OF19
+eyJoaXN0b3J5IjpbMTEyODYyNzc5OSw4Njc4Njc5MDYsNTEyOD
+UyMTQsLTYzMDQ5ODQ2Niw2OTkyOTczMjIsLTExNjM3OTIyNjYs
+MTA5NjIyODU5NywyMTA0NzczNywxMzE1ODE4NTQ2LDExODI5OD
+I5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
 -->
