@@ -41,14 +41,14 @@ The functions you create will only work if all the Power Query native functions 
 
 ## Other libraries
 Below, you will find other handy PowerQuery libraries that could come in handy: 
-1. [M-tools](https://github.com/acaprojects/m-tools/tree/master)
-2. [M](https://github.com/ImkeF/M) by Imke Feldman
-3. 
+1. [M-tools](https://github.com/acaprojects/m-tools/tree/master) by Kim Burgess
+2. [M](https://github.com/ImkeF/M) by Imke Feldmann
+3. M 
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU2MDYzOTcsNjk5Mjk3MzIyLC0xMTYzNz
-kyMjY2LDEwOTYyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0Niwx
-MTgyOTgyOTg2LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
+eyJoaXN0b3J5IjpbLTExMDc4ODk3NTUsNjk5Mjk3MzIyLC0xMT
+YzNzkyMjY2LDEwOTYyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0
+NiwxMTgyOTgyOTg2LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
 -->
