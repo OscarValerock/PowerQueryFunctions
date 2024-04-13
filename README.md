@@ -13,7 +13,7 @@ Despite Power Query's limitations, such as its specific M code environment, this
 This repository was inspired by [Injae Park's YouTube video](https://www.youtube.com/watch?v=GXFxiEVAmfI) and [repository](https://github.com/PowerBIPark/PowerBI_MQueryTest) on how to version control M Code, his research and code is a cornerstone of this project; extremely useful were the references he included: 
 
 - Imke Feldman's [post on expression evaluate](https://www.thebiccountant.com/2018/05/17/automatically-create-function-record-for-expression-evaluate-in-power-bi-and-power-query/) came particularly handy when dealing with documentation. 
-- Kim Burgess' [repository, m-tools](https://github.com/acaprojects/m-tools/blob/master/M.pq) was instrumental when defining the usage of the functions and the readme file.
+- Kim Burgess' [repository, m-tools](https://github.com/acaprojects/m-tools/blob/master/M.pq) was instrumental when defining the usage of the functions, the readme file and the idea of "compiling" the functions in a single file to import.
 
 ## Usage
 ### Library installation and usage
@@ -46,7 +46,7 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOT
-YyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2
-LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
+eyJoaXN0b3J5IjpbMTk3NTI0NDEwNSw2OTkyOTczMjIsLTExNj
+M3OTIyNjYsMTA5NjIyODU5NywyMTA0NzczNywxMzE1ODE4NTQ2
+LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
 -->
