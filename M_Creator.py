@@ -10,7 +10,6 @@ exclude_strings = [
                    'bibb.pro',
                    'community.powerbi',
                    'community.fabric',
-                   'Date.Today',
                    'Documentation.Author',
                    'Documentation.Examples',
                    'Documentation.FieldCaption',
