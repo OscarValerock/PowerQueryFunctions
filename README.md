@@ -34,15 +34,16 @@ The functions you create will only work if all the Power Query native functions 
 ### How can you contribute?
 
  - New functions.
- - Upgrading
+ - Upgrading existing functions.
  - Adding documentation to existing functions.
  - Solve open issues.
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credits to your code. Plagiarism will not be tolerated.
 2. **Document your functions,** for this you can use the file  [M_FxDocTemplate.pq](https://github.com/OscarValerock/PowerQueryFunctions/blob/main/M_FxDocTemplate.pq "M_FxDocTemplate.pq")
-3. Comment your code.
-4. Have fun! 🎉
+3. Do not duplicate code, example,  if you have a better date table, upgrade the existing instead of creating a new one.
+4. Comment your code.
+5. Have fun! 🎉
 
 ## Other libraries
 Below, you will find other handy PowerQuery libraries that could come in handy: 
@@ -54,9 +55,9 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNDcwMjYzNCwxMTI4NjI3Nzk5LDg2Nz
-g2NzkwNiw1MTI4NTIxNCwtNjMwNDk4NDY2LDY5OTI5NzMyMiwt
-MTE2Mzc5MjI2NiwxMDk2MjI4NTk3LDIxMDQ3NzM3LDEzMTU4MT
-g1NDYsMTE4Mjk4Mjk4NiwtNTMyMDYwNDMsLTE2NzU0Mzc2ODhd
-fQ==
+eyJoaXN0b3J5IjpbLTE5ODQ4NjE1OTcsMTEyODYyNzc5OSw4Nj
+c4Njc5MDYsNTEyODUyMTQsLTYzMDQ5ODQ2Niw2OTkyOTczMjIs
+LTExNjM3OTIyNjYsMTA5NjIyODU5NywyMTA0NzczNywxMzE1OD
+E4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4
+XX0=
 -->
