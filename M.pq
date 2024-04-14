@@ -98,6 +98,7 @@ let
                         Json.Document = Json.Document,
                         Json.FromValue = Json.FromValue,
                         Lines.FromBinary = Lines.FromBinary,
+                        List.Accumulate = List.Accumulate,
                         List.Combine = List.Combine,
                         List.Dates = List.Dates,
                         List.IsEmpty = List.IsEmpty,
