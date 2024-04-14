@@ -46,7 +46,7 @@ The functions you create will only work if all the Power Query native functions 
 5. Have fun! 🎉
 
 ## Other libraries
-Below, you will find other handy PowerQuery libraries that could come in handy: 
+Below, you will find other handy PowerQuery libraries: 
 1. [M-tools](https://github.com/acaprojects/m-tools/tree/master) by Kim Burgess
 2. [M](https://github.com/ImkeF/M) by Imke Feldmann
 3. [M Custom Functions](https://github.com/tirnovar/m-custom-functions) by Štěpán Rešl 
@@ -55,9 +55,9 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzAxODE3NjksMTEyODYyNzc5OSw4Nj
-c4Njc5MDYsNTEyODUyMTQsLTYzMDQ5ODQ2Niw2OTkyOTczMjIs
-LTExNjM3OTIyNjYsMTA5NjIyODU5NywyMTA0NzczNywxMzE1OD
-E4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4
-XX0=
+eyJoaXN0b3J5IjpbLTE0OTg3NDM1MjYsLTEyNzAxODE3NjksMT
+EyODYyNzc5OSw4Njc4Njc5MDYsNTEyODUyMTQsLTYzMDQ5ODQ2
+Niw2OTkyOTczMjIsLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMT
+A0NzczNywxMzE1ODE4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQz
+LC0xNjc1NDM3Njg4XX0=
 -->
