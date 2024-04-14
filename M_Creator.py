@@ -16,7 +16,6 @@ exclude_strings = [
                    'Documentation.LongDescription',
                    'Documentation.Name',
                    'Documentation.SampleValues',
-                   'ExtraValues.Error',
                    'Formatting.IsCode',
                    'Formatting.IsMultiLine',
                    'gorilla.bi',

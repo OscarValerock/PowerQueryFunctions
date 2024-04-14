@@ -92,6 +92,7 @@ let
                         Duration.Minutes = Duration.Minutes,
                         Duration.Seconds = Duration.Seconds,
                         Duration.Type = Duration.Type,
+                        ExtraValues.Error = ExtraValues.Error,
                         Function.InvokeAfter = Function.InvokeAfter,
                         Int64.Type = Int64.Type,
                         Json.Document = Json.Document,
