@@ -20,6 +20,7 @@ exclude_strings = [
                    'Formatting.IsMultiLine',
                    'gorilla.bi',
                    'List.Flatten',
+                   'List.Norm',
                    'microsoft.com',
                    'odata.nextLink',
                    'Table.ToM',
