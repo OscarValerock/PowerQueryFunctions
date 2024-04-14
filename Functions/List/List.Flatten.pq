@@ -28,11 +28,8 @@ let
         let
             IsListType = (x) as logical => Value.Type(x) = List.Type,
             FlattenOneLevel = (L as list) as list =>
-                List.Accumulate(L, {},
-                    (state, current) =>
-                        if IsListType(current)
-                        then state & current
-                        else state & {current}
+                List.Combine(
+                    List.Transform(L, each if IsListType(_) then _ else {_})
                 ),
             FlattenAll = (L as list) as list =>
                 if List.MatchesAny(L, IsListType) // Check if L is nested
