@@ -21,6 +21,7 @@ exclude_strings = [
                    'gorilla.bi',
                    'List.Flatten',
                    'List.Norm',
+                   'List.DotProduct'
                    'microsoft.com',
                    'odata.nextLink',
                    'Table.ToM',
