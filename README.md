@@ -31,15 +31,22 @@ This library is "imported" into Power Query by following these steps:
 Please contribute in the folder category that best suits. If the folder does not exist, create it. 
 
 The functions you create will only work if all the Power Query native functions used are declared in the [**M.pq**](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
+### How can you contribute?
+
+ - New functions.
+ - Upgrading existing functions.
+ - Adding documentation to existing functions.
+ - Solve open issues.
 
 ### Contributing guidelines
 1. Make sure to add the corresponding credits to your code. Plagiarism will not be tolerated.
 2. **Document your functions,** for this you can use the file  [M_FxDocTemplate.pq](https://github.com/OscarValerock/PowerQueryFunctions/blob/main/M_FxDocTemplate.pq "M_FxDocTemplate.pq")
-3. Comment your code.
-4. Have fun! 🎉
+3. Do not duplicate code. Example:  if you have a better date table, upgrade the existing instead of creating a new one.
+4. Comment your code.
+5. Have fun! 🎉
 
 ## Other libraries
-Below, you will find other handy PowerQuery libraries that could come in handy: 
+Below, you will find other handy PowerQuery libraries: 
 1. [M-tools](https://github.com/acaprojects/m-tools/tree/master) by Kim Burgess
 2. [M](https://github.com/ImkeF/M) by Imke Feldmann
 3. [M Custom Functions](https://github.com/tirnovar/m-custom-functions) by Štěpán Rešl 
@@ -48,8 +55,9 @@ Below, you will find other handy PowerQuery libraries that could come in handy:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyODYyNzc5OSw4Njc4Njc5MDYsNTEyOD
-UyMTQsLTYzMDQ5ODQ2Niw2OTkyOTczMjIsLTExNjM3OTIyNjYs
-MTA5NjIyODU5NywyMTA0NzczNywxMzE1ODE4NTQ2LDExODI5OD
-I5ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbLTE0OTg3NDM1MjYsLTEyNzAxODE3NjksMT
+EyODYyNzc5OSw4Njc4Njc5MDYsNTEyODUyMTQsLTYzMDQ5ODQ2
+Niw2OTkyOTczMjIsLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMT
+A0NzczNywxMzE1ODE4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQz
+LC0xNjc1NDM3Njg4XX0=
 -->

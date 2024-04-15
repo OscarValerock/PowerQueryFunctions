@@ -103,20 +103,27 @@ let
                         List.Count = List.Count,
                         List.Dates = List.Dates,
                         List.Distinct = List.Distinct,
+                        List.DotProduct = List.DotProduct,
                         List.First = List.First,
                         List.IsEmpty = List.IsEmpty,
                         List.MatchesAny = List.MatchesAny,
                         List.Max = List.Max,
                         List.Median = List.Median,
                         List.Min = List.Min,
+                        List.Product = List.Product,
                         List.RemoveItems = List.RemoveItems,
                         List.RemoveNulls = List.RemoveNulls,
                         List.StandardDeviation = List.StandardDeviation,
+                        List.Sum = List.Sum,
                         List.Transform = List.Transform,
                         List.Type = List.Type,
+                        List.Zip = List.Zip,
                         Logical.Type = Logical.Type,
+                        Number.Abs = Number.Abs,
                         Number.From = Number.From,
                         Number.IntegerDivide = Number.IntegerDivide,
+                        Number.PositiveInfinity = Number.PositiveInfinity,
+                        Number.Power = Number.Power,
                         Number.Type = Number.Type,
                         Order.Descending = Order.Descending,
                         Record.Field = Record.Field,
@@ -157,7 +164,8 @@ let
                         Time.Type = Time.Type,
                         Type.Is = Type.Is,
                         Value.ReplaceType = Value.ReplaceType,
-                        Value.Type = Value.Type
+                        Value.Type = Value.Type,
+                        microsoft.com = microsoft.com
                     ]
                 )
         in
