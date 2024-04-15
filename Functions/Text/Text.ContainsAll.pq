@@ -34,7 +34,7 @@ let
             ],
             [
                 Description = " Comparison can be done using a case-insenitive comparer. ", 
-                Code = " Text.ContainsAny(""Sphinx of black quartz, judge my vow."", {""a""..""z""}, Comparer.OrdinalIgnorCase ) ", 
+                Code = " Text.ContainsAny(""Sphinx of black quartz, judge my vow."", {""a""..""z""}, Comparer.OrdinalIgnoreCase ) ", 
                 Result = " TRUE "
             ]
       }
