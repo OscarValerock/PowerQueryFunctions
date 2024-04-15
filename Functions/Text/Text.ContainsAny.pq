@@ -34,7 +34,7 @@ let
             ],
             [
                 Description = " Comparison can be done using a case-insenitive comparer. ", 
-                Code = " Text.ContainsAny(""Hello World!"", {""hello"", ""kitty""}, Comparer.OrdinalIgnorCase ) ", 
+                Code = " Text.ContainsAny(""Hello World!"", {""hello"", ""kitty""}, Comparer.OrdinalIgnoreCase ) ", 
                 Result = " TRUE "
             ]
       }
