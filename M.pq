@@ -103,7 +103,6 @@ let
                         List.Count = List.Count,
                         List.Dates = List.Dates,
                         List.Distinct = List.Distinct,
-                        List.DotProduct = List.DotProduct,
                         List.First = List.First,
                         List.IsEmpty = List.IsEmpty,
                         List.MatchesAny = List.MatchesAny,
@@ -164,8 +163,7 @@ let
                         Time.Type = Time.Type,
                         Type.Is = Type.Is,
                         Value.ReplaceType = Value.ReplaceType,
-                        Value.Type = Value.Type,
-                        microsoft.com = microsoft.com
+                        Value.Type = Value.Type
                     ]
                 )
         in
