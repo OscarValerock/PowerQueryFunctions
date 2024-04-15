@@ -5,12 +5,19 @@ let
     GitHubUser = "OscarValerock",
     GitHubRepo = "PowerQueryFunctions",
     BaseURL = "https://api.github.com/repos/",
+    PAT = "", // Personal Access Token (PAT) for GitHub API https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+    QueryHeaders = if PAT <> ""
+        then
+            [Authorization = "Bearer  " & PAT] 
+        else
+            [],
 
     #"Get Trees all trees" = Json.Document(
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/main",
-                 Query = []
+                 Query = [],
+                 Headers = QueryHeaders
              ]
         )
     ),
@@ -21,7 +28,8 @@ let
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"&filterList,
-                 Query = []
+                 Query = [],
+                 Headers = QueryHeaders
              ]
         )
     ),
@@ -32,7 +40,8 @@ let
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"& tree,
-                 Query = []
+                 Query = [],
+                 Headers = QueryHeaders
              ]
         )
     )[tree],
@@ -52,7 +61,8 @@ let
             #"Get functions fx" = Json.Document(Web.Contents(
                 BaseURL,[
                     RelativePath = GitHubUser&"/"&GitHubRepo&"/git/blobs/"&relativePath,
-                    Query = []
+                    Query = [],
+                    Headers = QueryHeaders
                 ]
             ))[content],
             #"To text" = 
@@ -99,28 +109,56 @@ let
                         Json.FromValue = Json.FromValue,
                         Lines.FromBinary = Lines.FromBinary,
                         List.Accumulate = List.Accumulate,
+                        List.Average = List.Average,
                         List.Combine = List.Combine,
+                        List.Count = List.Count,
                         List.Dates = List.Dates,
+                        List.Distinct = List.Distinct,
+                        List.First = List.First,
                         List.IsEmpty = List.IsEmpty,
                         List.MatchesAny = List.MatchesAny,
+                        List.Max = List.Max,
+                        List.Median = List.Median,
+                        List.Min = List.Min,
+                        List.Product = List.Product,
                         List.RemoveItems = List.RemoveItems,
+                        List.RemoveNulls = List.RemoveNulls,
                         List.Select = List.Select,
+                        List.StandardDeviation = List.StandardDeviation,
+                        List.Sum = List.Sum,
                         List.Transform = List.Transform,
                         List.Type = List.Type,
+                        List.Zip = List.Zip,
                         Logical.Type = Logical.Type,
+                        Number.Abs = Number.Abs,
                         Number.From = Number.From,
                         Number.IntegerDivide = Number.IntegerDivide,
+                        Number.PositiveInfinity = Number.PositiveInfinity,
+                        Number.Power = Number.Power,
                         Number.Type = Number.Type,
+                        Order.Descending = Order.Descending,
+                        Record.Field = Record.Field,
+                        Record.FieldNames = Record.FieldNames,
+                        Record.FieldValues = Record.FieldValues,
+                        Record.FromList = Record.FromList,
                         Splitter.SplitByNothing = Splitter.SplitByNothing,
                         Splitter.SplitTextByRepeatedLengths = Splitter.SplitTextByRepeatedLengths,
                         Table.AddColumn = Table.AddColumn,
                         Table.AddIndexColumn = Table.AddIndexColumn,
+                        Table.Column = Table.Column,
+                        Table.ColumnNames = Table.ColumnNames,
+                        Table.Combine = Table.Combine,
                         Table.ExpandTableColumn = Table.ExpandTableColumn,
                         Table.FromList = Table.FromList,
+                        Table.FromRecords = Table.FromRecords,
                         Table.FromRows = Table.FromRows,
                         Table.FromValue = Table.FromValue,
                         Table.Group = Table.Group,
+                        Table.RowCount = Table.RowCount,
                         Table.Schema = Table.Schema,
+                        Table.SelectColumns = Table.SelectColumns,
+                        Table.SelectRows = Table.SelectRows,
+                        Table.Sort = Table.Sort,
                         Table.ToRecords = Table.ToRecords,
                         Table.ToRows = Table.ToRows,
                         Table.TransformColumns = Table.TransformColumns,
@@ -138,8 +176,10 @@ let
                         Time.Minute = Time.Minute,
                         Time.Second = Time.Second,
                         Time.Type = Time.Type,
+                        Type.Is = Type.Is,
                         Value.ReplaceType = Value.ReplaceType,
                         Value.Type = Value.Type
+                        //,Web.Contents = Web.Contents //Unfortunately adding this function to the M code will create a dynamic error :(
                     ]
                 )
         in

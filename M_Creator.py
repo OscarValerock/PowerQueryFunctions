@@ -20,6 +20,8 @@ exclude_strings = [
                    'Formatting.IsMultiLine',
                    'gorilla.bi',
                    'List.Flatten',
+                   'List.Norm',
+                   'List.DotProduct',
                    'microsoft.com',
                    'odata.nextLink',
                    'Table.ToM',
@@ -31,7 +33,9 @@ exclude_strings = [
                    'www.linkedin',
                    'youtu.be',
                 ]
-manual_strings = [ ]
+manual_strings = [
+    'Number.Abs'
+ ]
 
 M_Code = """
 
@@ -40,12 +44,19 @@ let
     GitHubUser = "OscarValerock",
     GitHubRepo = "PowerQueryFunctions",
     BaseURL = "https://api.github.com/repos/",
+    PAT = "", // Personal Access Token (PAT) for GitHub API https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+    QueryHeaders = if PAT <> ""
+        then
+            [Authorization = "Bearer  " & PAT] 
+        else
+            [],
 
     #"Get Trees all trees" = Json.Document(
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/main",
-                 Query = []
+                 Query = [],
+                 Headers = QueryHeaders
              ]
         )
     ),
@@ -56,7 +67,8 @@ let
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"&filterList,
-                 Query = []
+                 Query = [],
+                 Headers = QueryHeaders
              ]
         )
     ),
@@ -67,7 +79,8 @@ let
         Web.Contents(
             BaseURL,[
                  RelativePath = GitHubUser&"/"&GitHubRepo&"/git/trees/"& tree,
-                 Query = []
+                 Query = [],
+                 Headers = QueryHeaders
              ]
         )
     )[tree],
@@ -87,7 +100,8 @@ let
             #"Get functions fx" = Json.Document(Web.Contents(
                 BaseURL,[
                     RelativePath = GitHubUser&"/"&GitHubRepo&"/git/blobs/"&relativePath,
-                    Query = []
+                    Query = [],
+                    Headers = QueryHeaders
                 ]
             ))[content],
             #"To text" = 
@@ -97,6 +111,7 @@ let
                     ),
                     [ 
 #TextToReplace
+                        //,Web.Contents = Web.Contents //Unfortunately adding this function to the M code will create a dynamic error :(
                     ]
                 )
         in
