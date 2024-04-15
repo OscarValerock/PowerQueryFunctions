@@ -23,9 +23,19 @@ let
             ",
         Documentation.Examples = {
             [
-                Description = " TODO ", 
-                Code = " TODO ", 
-                Result = " TODO "
+                Description = " Check if a sentence is a pangram (contains all letters of the alphabet). ", 
+                Code = " Text.ContainsAll(""The quick brown fox jumps over the lazy dog."", {""a""..""z""}) ", 
+                Result = " TRUE "
+            ],
+            [
+                Description = " By default, comparison is case-sensitive and the following has an S but no s. ", 
+                Code = " Text.ContainsAny(""Sphinx of black quartz, judge my vow."", {""a""..""z""}) ", 
+                Result = " FALSE "
+            ],
+            [
+                Description = " Comparison can be done using a case-insenitive comparer. ", 
+                Code = " Text.ContainsAny(""Sphinx of black quartz, judge my vow."", {""a""..""z""}, Comparer.OrdinalIgnorCase ) ", 
+                Result = " TRUE "
             ]
       }
     ],
@@ -33,7 +43,7 @@ let
         (txt as text, substrings as list, optional comparer as function) as logical =>
             let
                 Matches = List.Select(substrings, (substr) => Text.Contains(txt, substr, comparer)),
-                Result = (substrings = Matches) // 
+                Result = (substrings = Matches) // All substrings are matched
             in
                 Result
 in

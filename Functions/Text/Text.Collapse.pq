@@ -16,20 +16,20 @@ let
         Documentation.LongDescription = 
             // This is the description of the documentation, it only accepts a handful of HTML tags for formatting.
             "
-                Collapses multiple characters into a single seperator
-                <p>TODO</p>
+                Collapses multiple characters into a single seperator.
+                <p>See the illustrative examples listed below.</p>
                 <li><b>Author: </b>Alexis Olson</li>
                 <li><b>LinkedIn: </b>https://www.linkedin.com/in/alexis-olson-81726818/</li>
             ",
         Documentation.Examples = {
             [
-                Description = " Simple usage is like an inner and outer trim. ", 
-                Code = " Text.Collapse(""--a-b--c---d---"", ""-"") ", 
+                Description = " Simple usage is similar to an inner and outer trim. ", 
+                Code = " Text.Collapse(""--a----b--c---d---"", ""-"") ", 
                 Result = " a-b-c-d "
             ],
             [
                 Description = " Multiple characters can be collapsed and the result combined using a different separator. ", 
-                Code = " Text.Collapse(""[(a-..-b).--.((c-..-d))]"", ""[(-.)]"", "" <=> "") ", 
+                Code = " Text.Collapse(""[(a-..-b).-.-.-.((c-..-d))]"", ""[(-.)]"", "" <=> "") ", 
                 Result = " a <=> b <=> c <=> d "
             ]
       }
