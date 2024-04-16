@@ -31,6 +31,8 @@ This library is "imported" into Power Query by following these steps:
 Please contribute in the folder category that best suits. If the folder does not exist, create it. 
 
 The functions you create will only work if all the Power Query native functions used are declared in the [**M.pq**](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
+### Naming convention.
+The M script creates the entry based on the folder where the function is stored plus the 
 ### How can you contribute?
 
  - New functions.
@@ -55,9 +57,9 @@ Below, you will find other handy PowerQuery libraries:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTg3NDM1MjYsLTEyNzAxODE3NjksMT
-EyODYyNzc5OSw4Njc4Njc5MDYsNTEyODUyMTQsLTYzMDQ5ODQ2
-Niw2OTkyOTczMjIsLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMT
-A0NzczNywxMzE1ODE4NTQ2LDExODI5ODI5ODYsLTUzMjA2MDQz
-LC0xNjc1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbNjgwMTkyNTcyLC0xNDk4NzQzNTI2LC0xMj
+cwMTgxNzY5LDExMjg2Mjc3OTksODY3ODY3OTA2LDUxMjg1MjE0
+LC02MzA0OTg0NjYsNjk5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOT
+YyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2
+LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
 -->
