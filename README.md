@@ -15,6 +15,9 @@ This repository was inspired by [Injae Park's YouTube video](https://www.youtube
 - Kim Burgess' [repository, m-tools](https://github.com/acaprojects/m-tools/blob/master/M.pq) was instrumental when defining the usage of the functions, the readme file and the idea of "compiling" the functions in a single file to import.
 
 ## Usage
+### Use under your own risk
+This library is still on very early stages and lots 
+
 ### Library installation and usage
 
 This library is "imported" into Power Query by following these steps:
@@ -33,13 +36,13 @@ Please contribute in the folder category that best suits. If the folder does not
 The functions you create will only work if all the Power Query native functions used are declared in the [**M.pq**](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
 
 ### Naming convention.
-When naming the function keep in mind two things: meaningfullness and brevity. 
+When naming the function keep in mind meaningfullness and brevity. 
+
 The M script creates the entry based on the folder where the function is stored plus the name of the function. 
 
 **Example:** a function named Join  in the folder Table will appear as **Table.Join**
 
-Ideally the
-
+This means that there is no need of adding the group (folder) of function on its name.
 
 ### How can you contribute?
 
@@ -65,7 +68,7 @@ Below, you will find other handy PowerQuery libraries:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1OTg1NDczNiwtMTQ5ODc0MzUyNiwtMT
+eyJoaXN0b3J5IjpbMTI4OTc2MTIwNywtMTQ5ODc0MzUyNiwtMT
 I3MDE4MTc2OSwxMTI4NjI3Nzk5LDg2Nzg2NzkwNiw1MTI4NTIx
 NCwtNjMwNDk4NDY2LDY5OTI5NzMyMiwtMTE2Mzc5MjI2NiwxMD
 k2MjI4NTk3LDIxMDQ3NzM3LDEzMTU4MTg1NDYsMTE4Mjk4Mjk4
