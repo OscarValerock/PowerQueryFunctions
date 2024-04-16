@@ -1,3 +1,4 @@
+
 # Power Query Functions
 ## Introduction
 
@@ -16,7 +17,7 @@ This repository was inspired by [Injae Park's YouTube video](https://www.youtube
 
 ## Usage
 ### Experimental stage of library ⚠️
-This library is on very early development stage and lots of things are moving, meaning that there is a high probability of experiencing breaking changes. 
+This library is in a very early development stage, and lots of things are moving, meaning that there is a high probability of experiencing breaking changes. 
 
 ### Library installation and usage
 
@@ -35,15 +36,6 @@ Please contribute in the folder category that best suits. If the folder does not
 
 The functions you create will only work if all the Power Query native functions used are declared in the [**M.pq**](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
 
-### Naming convention.
-When naming the function keep in mind meaningfullness and brevity. 
-
-The M script creates the entry based on the folder where the function is stored plus the name of the function. 
-
-**Example:** a function named Join  in the folder Table will appear as **Table.Join**
-
-This means that there is no need of adding the group (folder) of function on its name.
-
 ### How can you contribute?
 
  - New functions.
@@ -54,9 +46,18 @@ This means that there is no need of adding the group (folder) of function on its
 ### Contributing guidelines
 1. Make sure to add the corresponding credits to your code. Plagiarism will not be tolerated.
 2. **Document your functions,** for this you can use the file  [M_FxDocTemplate.pq](https://github.com/OscarValerock/PowerQueryFunctions/blob/main/M_FxDocTemplate.pq "M_FxDocTemplate.pq")
-3. Do not duplicate code. Example:  if you have a better date table, upgrade the existing instead of creating a new one.
+3. Do not duplicate code. For example, if you have a better date table, upgrade the existing one instead of creating a new one.
 4. Comment your code.
 5. Have fun! 🎉
+
+### Naming convention.
+When naming the function, keep meaningfulness and brevity in mind. 
+
+The M script creates the entry based on the folder where the function is stored and its name. 
+
+**Example:** A function named Join in the folder Table will appear as **Table.Join**
+
+This means there is no need to add the group (folder) of the function to its name.
 
 ## Other libraries
 Below, you will find other handy PowerQuery libraries: 
@@ -68,9 +69,9 @@ Below, you will find other handy PowerQuery libraries:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDI3NTE1NDEsLTE0OTg3NDM1MjYsLT
-EyNzAxODE3NjksMTEyODYyNzc5OSw4Njc4Njc5MDYsNTEyODUy
-MTQsLTYzMDQ5ODQ2Niw2OTkyOTczMjIsLTExNjM3OTIyNjYsMT
-A5NjIyODU5NywyMTA0NzczNywxMzE1ODE4NTQ2LDExODI5ODI5
-ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
+eyJoaXN0b3J5IjpbMjU0MTIzMDI1LC0xMjAyNzUxNTQxLC0xND
+k4NzQzNTI2LC0xMjcwMTgxNzY5LDExMjg2Mjc3OTksODY3ODY3
+OTA2LDUxMjg1MjE0LC02MzA0OTg0NjYsNjk5Mjk3MzIyLC0xMT
+YzNzkyMjY2LDEwOTYyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0
+NiwxMTgyOTgyOTg2LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
 -->
