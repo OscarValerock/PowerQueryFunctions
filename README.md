@@ -15,8 +15,8 @@ This repository was inspired by [Injae Park's YouTube video](https://www.youtube
 - Kim Burgess' [repository, m-tools](https://github.com/acaprojects/m-tools/blob/master/M.pq) was instrumental when defining the usage of the functions, the readme file and the idea of "compiling" the functions in a single file to import.
 
 ## Usage
-### Use under your own risk
-This library is still on very early stages and lots 
+### Experimental stage of library ⚠️
+This library is on very early development stage and lots of things are moving, meaning that there is a high probability of experiencing breaking changes. 
 
 ### Library installation and usage
 
@@ -68,9 +68,9 @@ Below, you will find other handy PowerQuery libraries:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4OTc2MTIwNywtMTQ5ODc0MzUyNiwtMT
-I3MDE4MTc2OSwxMTI4NjI3Nzk5LDg2Nzg2NzkwNiw1MTI4NTIx
-NCwtNjMwNDk4NDY2LDY5OTI5NzMyMiwtMTE2Mzc5MjI2NiwxMD
-k2MjI4NTk3LDIxMDQ3NzM3LDEzMTU4MTg1NDYsMTE4Mjk4Mjk4
-NiwtNTMyMDYwNDMsLTE2NzU0Mzc2ODhdfQ==
+eyJoaXN0b3J5IjpbLTEyMDI3NTE1NDEsLTE0OTg3NDM1MjYsLT
+EyNzAxODE3NjksMTEyODYyNzc5OSw4Njc4Njc5MDYsNTEyODUy
+MTQsLTYzMDQ5ODQ2Niw2OTkyOTczMjIsLTExNjM3OTIyNjYsMT
+A5NjIyODU5NywyMTA0NzczNywxMzE1ODE4NTQ2LDExODI5ODI5
+ODYsLTUzMjA2MDQzLC0xNjc1NDM3Njg4XX0=
 -->
