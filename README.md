@@ -33,11 +33,12 @@ Please contribute in the folder category that best suits. If the folder does not
 The functions you create will only work if all the Power Query native functions used are declared in the [**M.pq**](M.pq) file. You can run the [M_Creator.py](M_Creator.py) Python script to locate all the functions via regex and rewrite an M.pq file. 
 
 ### Naming convention.
+When naming the function keep in mind two things: meaningfullness and brevity. 
 The M script creates the entry based on the folder where the function is stored plus the name of the function. 
 
 **Example:** a function named Join  in the folder Table will appear as **Table.Join**
 
-
+Ideally the
 
 
 ### How can you contribute?
@@ -64,9 +65,9 @@ Below, you will find other handy PowerQuery libraries:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM2NDE3ODAyLC0xNDk4NzQzNTI2LC0xMj
-cwMTgxNzY5LDExMjg2Mjc3OTksODY3ODY3OTA2LDUxMjg1MjE0
-LC02MzA0OTg0NjYsNjk5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOT
-YyMjg1OTcsMjEwNDc3MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2
-LC01MzIwNjA0MywtMTY3NTQzNzY4OF19
+eyJoaXN0b3J5IjpbLTc1OTg1NDczNiwtMTQ5ODc0MzUyNiwtMT
+I3MDE4MTc2OSwxMTI4NjI3Nzk5LDg2Nzg2NzkwNiw1MTI4NTIx
+NCwtNjMwNDk4NDY2LDY5OTI5NzMyMiwtMTE2Mzc5MjI2NiwxMD
+k2MjI4NTk3LDIxMDQ3NzM3LDEzMTU4MTg1NDYsMTE4Mjk4Mjk4
+NiwtNTMyMDYwNDMsLTE2NzU0Mzc2ODhdfQ==
 -->
