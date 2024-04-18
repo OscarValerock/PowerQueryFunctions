@@ -25,6 +25,10 @@ exclude_strings = [
                    'microsoft.com',
                    'odata.nextLink',
                    'Table.ToM',
+                   'Text.Collapse',
+                   'Text.ContainsAll',
+                   'Text.ContainsAny',
+                   'Text.ReplaceMany',
                    'Web.Contents', #Unfortunately adding this function to the M code will create a dynamic error :(
                    'www.linkedin',
                    'youtu.be',
