@@ -90,6 +90,7 @@ let
                         Date.ToText = Date.ToText,
                         Date.Type = Date.Type,
                         Date.Year = Date.Year,
+                        DateTime.FixedLocalNow = DateTime.FixedLocalNow,
                         DateTime.LocalNow = DateTime.LocalNow,
                         DateTime.Type = DateTime.Type,
                         DateTimeZone.Type = DateTimeZone.Type,
