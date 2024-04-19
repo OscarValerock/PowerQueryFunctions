@@ -30,7 +30,8 @@ This library is "imported" into Power Query by following these steps:
 `M[General.PictureBinary](table, number, number)`
 
 ### GitHub rate limit
-You may run into GitHub's API rate limit. To avoid this, add a Personal Access Token to While 
+You may run into GitHub's API rate limit. To avoid this, add a Personal Access Token to the "PAT" M code. 
+
 
 ## Contributing
 **Contributions are welcome!** Feel free to submit a pull request if you have any new functions or improvements to existing ones.
@@ -72,7 +73,7 @@ Below, you will find other handy PowerQuery libraries:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MzcwNTY1NCwyNTQxMjMwMjUsLTEyMD
+eyJoaXN0b3J5IjpbLTIzMTQ5OTA2MSwyNTQxMjMwMjUsLTEyMD
 I3NTE1NDEsLTE0OTg3NDM1MjYsLTEyNzAxODE3NjksMTEyODYy
 Nzc5OSw4Njc4Njc5MDYsNTEyODUyMTQsLTYzMDQ5ODQ2Niw2OT
 kyOTczMjIsLTExNjM3OTIyNjYsMTA5NjIyODU5NywyMTA0Nzcz
