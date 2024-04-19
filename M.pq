@@ -65,7 +65,7 @@ let
                     Headers = QueryHeaders
                 ]
             ))[content],
-            #"To text" = 
+            #"To function" = 
                 Expression.Evaluate(
                     Text.FromBinary(
                         Binary.FromText(#"Get functions fx")
@@ -74,6 +74,7 @@ let
                         Any.Type = Any.Type,
                         Binary.ToText = Binary.ToText,
                         BinaryEncoding.Base64 = BinaryEncoding.Base64,
+                        Comparer.OrdinalIgnoreCase = Comparer.OrdinalIgnoreCase,
                         Date.AddDays = Date.AddDays,
                         Date.Day = Date.Day,
                         Date.DayOfWeek = Date.DayOfWeek,
@@ -184,12 +185,25 @@ let
                     ]
                 )
         in
-            #"To text",
+            #"To function",
+    #"Get PQ text fx" = (relativePath as text) => 
+        let 
+            #"Get functions fx" = Json.Document(Web.Contents(
+                BaseURL,[
+                    RelativePath = GitHubUser&"/"&GitHubRepo&"/git/blobs/"&relativePath,
+                    Query = [],
+                    Headers = QueryHeaders
+                ]
+            ))[content],
+            #"To function" = 
+                Text.FromBinary(Binary.FromText(#"Get functions fx"))
 
+        in
+            #"To function",
     #"Get PQ functions" = Table.TransformColumns(
         #"Extracted Text After Delimiter",
         {
-            "url", each #"Get PQ functions fx"(_)
+            "url", each try #"Get PQ functions fx"(_) otherwise  #"Get PQ text fx"(_)
         }
     ),
     #"Merged Columns" = Table.CombineColumns(#"Get PQ functions",{"Type","Path"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"Name"),

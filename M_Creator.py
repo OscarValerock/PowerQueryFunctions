@@ -10,6 +10,7 @@ exclude_strings = [
                    'bibb.pro',
                    'community.powerbi',
                    'community.fabric',
+                   'Date.Today',
                    'Documentation.Author',
                    'Documentation.Examples',
                    'Documentation.FieldCaption',
@@ -19,8 +20,16 @@ exclude_strings = [
                    'Formatting.IsCode',
                    'Formatting.IsMultiLine',
                    'gorilla.bi',
+                   'List.DotProduct',
+                   'List.Flatten',
+                   'List.Norm',
                    'microsoft.com',
                    'odata.nextLink',
+                   'Table.ToM',
+                   'Text.Collapse',
+                   'Text.ContainsAll',
+                   'Text.ContainsAny',
+                   'Text.ReplaceMany',
                    'Web.Contents', #Unfortunately adding this function to the M code will create a dynamic error :(
                    'www.linkedin',
                    'youtu.be',
@@ -96,7 +105,7 @@ let
                     Headers = QueryHeaders
                 ]
             ))[content],
-            #"To text" = 
+            #"To function" = 
                 Expression.Evaluate(
                     Text.FromBinary(
                         Binary.FromText(#"Get functions fx")
@@ -107,12 +116,25 @@ let
                     ]
                 )
         in
-            #"To text",
+            #"To function",
+    #"Get PQ text fx" = (relativePath as text) => 
+        let 
+            #"Get functions fx" = Json.Document(Web.Contents(
+                BaseURL,[
+                    RelativePath = GitHubUser&"/"&GitHubRepo&"/git/blobs/"&relativePath,
+                    Query = [],
+                    Headers = QueryHeaders
+                ]
+            ))[content],
+            #"To function" = 
+                Text.FromBinary(Binary.FromText(#"Get functions fx"))
 
+        in
+            #"To function",
     #"Get PQ functions" = Table.TransformColumns(
         #"Extracted Text After Delimiter",
         {
-            "url", each #"Get PQ functions fx"(_)
+            "url", each try #"Get PQ functions fx"(_) otherwise  #"Get PQ text fx"(_)
         }
     ),
     #"Merged Columns" = Table.CombineColumns(#"Get PQ functions",{"Type","Path"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"Name"),
