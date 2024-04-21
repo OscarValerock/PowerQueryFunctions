@@ -34,7 +34,7 @@ let
         Documentation.InspiredBy = "Name of Original Author / Inspiration",
         Documentation.LongDescription = 
         "    
-                <p><b>  Count Months Between Dates  </b></p>
+                <p><b>  Template Title  </b></p>
 
                 <li>------------------------------------------------------</li>
                 
