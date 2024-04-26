@@ -1,5 +1,3 @@
-
-
 let
 
     GitHubUser = "OscarValerock",
@@ -244,6 +242,6 @@ let
         }
     ),
     #"Merged Columns" = Table.CombineColumns(#"Get PQ functions",{"Type","Path"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"Name"),
-    #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
+    #"ConvertToRecords" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
-    #"Renamed Columns"
+    #"ConvertToRecords"

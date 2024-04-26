@@ -12,13 +12,20 @@ exclude_strings = [
                    'community.fabric',
                    'Date.Today',
                    'Documentation.Author',
+                   'Documentation.Category',
+                   'Documentation.Description',
+                   'Documentation.FieldDescription',
+                   'Documentation.AllowedValues',
                    'Documentation.Examples',
                    'Documentation.FieldCaption',
                    'Documentation.LongDescription',
                    'Documentation.Name',
                    'Documentation.SampleValues',
+                   'Documentation.Source',
+                   'Documentation.Version',
                    'Formatting.IsCode',
                    'Formatting.IsMultiLine',
+                   'github.com',
                    'gorilla.bi',
                    'List.DotProduct',
                    'List.Flatten',
@@ -33,6 +40,7 @@ exclude_strings = [
                    'Web.Contents', #Unfortunately adding this function to the M code will create a dynamic error :(
                    'www.linkedin',
                    'youtu.be',
+                   'www.youtube'
                 ]
 manual_strings = [
     'Number.Abs'
@@ -138,9 +146,9 @@ let
         }
     ),
     #"Merged Columns" = Table.CombineColumns(#"Get PQ functions",{"Type","Path"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"Name"),
-    #"Renamed Columns" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
+    #"ConvertToRecords" = Record.FromTable(Table.RenameColumns(#"Merged Columns",{{"url", "Value"}}))
 in
-    #"Renamed Columns"
+    #"ConvertToRecords"
 """
 def process_file(file_path):
     """
@@ -204,4 +212,3 @@ M_Code = M_Code.replace("#TextToReplace", result)
 print(M_Code)
 with open('M.pq', 'w') as file:
     file.write(M_Code)
-

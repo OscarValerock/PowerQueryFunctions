@@ -1,4 +1,3 @@
-let pq_custom_function =
 
 let
     // Define metadata for the function, describing its purpose and usage.
@@ -27,7 +26,6 @@ let
         ])
     ) as list meta [
         Documentation.Name = "fnCountMonths",
-        
         Documentation.LongDescription = 
         "    
                 <p><b>  Count Months Between Dates  </b></p>
@@ -36,14 +34,6 @@ let
                 
                 <li><b>  Creator: </b> Imran Haq  </li>
                 <li><b>  Web: </b> https://github.com/PBIQueryous  </li>
-                <li><b>  Acknowledgements: </b>   </li>
-                <li><b>  LinkedIn: </b>   </li>
-
-                <li>------------------------------------------------------</li>
-
-                <li><b>  Editor: </b>  Oscar Martinez  </li>
-                <li><b>  Web: </b>  https://bibb.pro  </li>
-                <li><b>  LinkedIn: </b>  https://www.linkedin.com/in/oscarmartinezv/  </li>
 
                 <li>------------------------------------------------------</li>
 
@@ -70,9 +60,6 @@ let
     
 myFunction = (StartDate as date, EndDate as date, optional CompletedMonthsOnly as nullable logical) =>
 
-  let invoke_custom_function =
-// paste your custom function here
-// _______________________________
         let
           countWholeMonths = if (CompletedMonthsOnly ?? true) = true then -1 else 0, 
           MonthsList = List.Generate(
@@ -84,12 +71,7 @@ myFunction = (StartDate as date, EndDate as date, optional CompletedMonthsOnly a
           MonthsCount = Int64.From(List.Count(MonthsList))
         in
           MonthsCount
-// _______________________________
-  in invoke_custom_function,
-        
-    replaceMetaData = Value.ReplaceType(myFunction, metaDocumentation)
-        
-  in
-    replaceMetaData
+
+ 
 in
-  pq_custom_function
+  Value.ReplaceType(myFunction, metaDocumentation)
