@@ -1,7 +1,3 @@
-//Function documentation template by Oscar Martinez https://bibb.pro
-let 
-    pq_custom_function =
-
 let
     // Step 1: Define metadata for each parameter describing its purpose and usage
     metaDocumentation = type function (
@@ -95,5 +91,3 @@ let
         
   in
     replaceMetaData
-in
-pq_custom_function
