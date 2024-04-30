@@ -1,3 +1,5 @@
+
+
 let
 
     GitHubUser = "OscarValerock",
@@ -139,6 +141,7 @@ let
                         List.Product = List.Product,
                         List.RemoveItems = List.RemoveItems,
                         List.RemoveNulls = List.RemoveNulls,
+                        List.ReplaceMatchingItems = List.ReplaceMatchingItems,
                         List.Select = List.Select,
                         List.StandardDeviation = List.StandardDeviation,
                         List.Sum = List.Sum,
@@ -195,6 +198,7 @@ let
                         Table.TransformColumnTypes = Table.TransformColumnTypes,
                         Table.TransformColumns = Table.TransformColumns,
                         Text.BeforeDelimiter = Text.BeforeDelimiter,
+                        Text.Clean = Text.Clean,
                         Text.Combine = Text.Combine,
                         Text.Contains = Text.Contains,
                         Text.End = Text.End,
@@ -202,11 +206,15 @@ let
                         Text.PadEnd = Text.PadEnd,
                         Text.PadStart = Text.PadStart,
                         Text.Proper = Text.Proper,
+                        Text.Remove = Text.Remove,
                         Text.Repeat = Text.Repeat,
                         Text.Replace = Text.Replace,
+                        Text.Split = Text.Split,
                         Text.SplitAny = Text.SplitAny,
                         Text.Start = Text.Start,
                         Text.ToBinary = Text.ToBinary,
+                        Text.ToList = Text.ToList,
+                        Text.Trim = Text.Trim,
                         Text.Type = Text.Type,
                         Time.Hour = Time.Hour,
                         Time.Minute = Time.Minute,
