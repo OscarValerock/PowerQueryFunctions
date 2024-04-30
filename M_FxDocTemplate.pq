@@ -69,25 +69,29 @@ let
                 <p><b>  Formula Bar (fx) Output:  </b></br>
                 <code>  fn_custom_function_template( TextValue, 200, true )  </code>
                 
-            "
+            ",
+        Documentation.Examples = {
+            [
+                Description = " Flatten a nested list with mixed levels into a simple list. ", 
+                Code = "List.Flatten({1, {2, 3}, {1, {2, 3}}})", 
+                Result = "{1, 2, 3, 1, 2, 3}"
+            ]
+      }
     ],
     
   // Define the main function and parameters
   myFunction = (parameter1 as text, parameter2 as number, optional parameter3 as nullable logical) =>
 
-    let invoke_custom_function =
+
     // paste your custom function here
     // _______________________________ \\
-            let
-              test_parameter3 = if (parameter3 ?? true) = true then -1 else 0, 
-              variable = parameter2,
-              response = parameter1 * test_parameter3
-            in
-              response
+    let
+      test_parameter3 = if (parameter3 ?? true) = true then -1 else 0, 
+      variable = parameter2,
+      response = parameter1 * test_parameter3
+    in
+      response
     // _______________________________ \\
-    in invoke_custom_function,
+  in  
 
-    replaceMetaData = Value.ReplaceType(myFunction, metaDocumentation)
-        
-  in
-    replaceMetaData
+    Value.ReplaceType(myFunction, metaDocumentation)

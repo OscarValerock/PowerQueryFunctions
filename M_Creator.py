@@ -37,6 +37,7 @@ exclude_strings = [
                    'Text.ContainsAll',
                    'Text.ContainsAny',
                    'Text.ReplaceMany',
+                   'Text.ListFromString',
                    'Web.Contents', #Unfortunately adding this function to the M code will create a dynamic error :(
                    'www.linkedin',
                    'youtu.be',
