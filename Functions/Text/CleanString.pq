@@ -29,6 +29,13 @@ let
             Formatting.IsMultiLine = false,
             Formatting.IsCode = false
         ]),
+        optional wordsRemove as (type text meta [
+            Documentation.FieldCaption = "Words to Remove",
+            Documentation.FieldDescription = "A string representing a word or words that will be removed from the input text.",
+            Documentation.SampleValues = {"Hello;World"},
+            Formatting.IsMultiLine = false,
+            Formatting.IsCode = false
+        ]),
         optional fullCellContents as (type text meta [
             Documentation.FieldCaption = "Full Cell Content Replace",
             Documentation.FieldDescription = "A semicolon-separated list of old and new content pairs for full cell replacement. Each pair should be delimited by a comma.",
@@ -60,14 +67,14 @@ let
         Documentation.Examples = {
             [
                 Description = "Replace specific characters in a text string.", 
-                Code = "Text.Clean('example text', 'x,y')", 
-                Result = "example teyt"
+                Code = "Text.CleanString(""Hello, World!"", ""o,r"")",
+                Result =  "Hellr, Wrrld!"
             ]
         }
     ],
     
   // Define the main function and parameters
-  myFunction = (mytext as text, optional characters as text, optional words as text, optional charactersRemove as text, optional fullCellContents as text) =>
+  myFunction = (mytext as text, optional characters as text, optional words as text, optional charactersRemove as text, optional wordsRemove as text, optional fullCellContents as text) =>
 
 let
     // Use the input text as the initial source
@@ -102,21 +109,27 @@ let
         else ReplaceMatchingChar,
 
     // Remove characters if 'charactersRemove' parameter is provided
-    CleanedText = if charactersRemove <> null then
+    RemoveCharacters = if charactersRemove <> null then
         Text.Remove(ReplaceMatchingWord, Text.ToList(charactersRemove))
         else ReplaceMatchingWord,
 
-    // Trim the final text
-    TrimmedText = Text.Trim(CleanedText),
+    // Remove full words if 'fullWordsRemove' parameter is provided
+    RemoveWords = if wordsRemove <> null then 
+        let
+            WordsToRemove = Text.Split(wordsRemove, ";"),
+            RemoveWords = List.RemoveItems(Text.Split(RemoveCharacters, " "), WordsToRemove)
+        in
+            Text.Combine(RemoveWords, " ")
+        else RemoveCharacters,
 
     // Replace full cell contents if 'fullCellContents' parameter is provided
     FinalText = if fullCellContents <> null then
         let
             ReplacementList = ListFromString(fullCellContents, ";", ","),
-            ReplacedFullContent = List.ReplaceMatchingItems({TrimmedText}, ReplacementList)
+            ReplacedFullContent = List.ReplaceMatchingItems({RemoveWords}, ReplacementList)
         in
             ReplacedFullContent{0}
-        else TrimmedText
+        else RemoveWords
 
 in
     FinalText
