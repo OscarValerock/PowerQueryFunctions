@@ -40,10 +40,10 @@ let
     // Step 2: Define global metadata in detail
     meta [
 
-        Documentation.Name = "Text.Clean",
+        Documentation.Name = "Text.CleanString",
         Documentation.LongDescription = 
         "    
-                <p><b>Text.Clean</b></p>
+                <p><b>Text.CleanString</b></p>
 
                 <li>------------------------------------------------------</li>
 
