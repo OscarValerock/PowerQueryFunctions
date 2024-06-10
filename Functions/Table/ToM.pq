@@ -119,7 +119,11 @@ let
       ColTypes_Text = Text.Combine(
         List.Transform(
           Table.ToRecords(Schema),
-          each [Name] & " = " & [Kind]
+          each
+            if (Text.Select([Name], {"0".."9", "a".."z", "A".."Z"} ) = [Name])
+              and List.Contains({"a".."z", "A".."Z"}, Text.Start([Name], 1))
+            then [Name] & " = " & [Kind]
+            else "#""" & [Name] & """ = " & [Kind]
         ), 
         ", "
       ), 
@@ -157,4 +161,3 @@ let
 in
   // Apply the function metadata to myFunction.
   Value.ReplaceType(myFunction, metaDocumentation)
-  
