@@ -161,6 +161,7 @@ let
                         Number.ToText = Number.ToText,
                         Number.Type = Number.Type,
                         Order.Descending = Order.Descending,
+                        PowerPlatform.Dataflows = PowerPlatform.Dataflows,
                         Record.Field = Record.Field,
                         Record.FieldNames = Record.FieldNames,
                         Record.FieldValues = Record.FieldValues,
