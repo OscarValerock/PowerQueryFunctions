@@ -91,8 +91,8 @@ let
 
         // //-- Date table code
 
-          StartDate = Date.From("01/01/" & Text.From(StartYearNUM)),  // -- turn ON for CUSTOM FN
-          EndDate = Date.From("31/12/" & Text.From(EndYearNUM)),  // -- turn ON for CUSTOM FN 
+          StartDate = #date(StartYearNUM, 01 , 01),  // -- turn ON for CUSTOM FN
+          EndDate = #date(EndYearNUM, 12 ,31),  // -- turn ON for CUSTOM FN  
                                                                              
           FYStartMonth = List.Select({1 .. 12}, each _ = FYStartMonthNum){0}? ?? 1, 
           AYStartMonth = List.Select({1 .. 12}, each _ = AYStartMonthNum){0}? ?? 1, 
