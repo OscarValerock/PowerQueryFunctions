@@ -212,6 +212,7 @@ let
                         Text.Remove = Text.Remove,
                         Text.Repeat = Text.Repeat,
                         Text.Replace = Text.Replace,
+                        Text.Select = Text.Select,
                         Text.Split = Text.Split,
                         Text.SplitAny = Text.SplitAny,
                         Text.Start = Text.Start,
