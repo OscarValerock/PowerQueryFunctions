@@ -39,7 +39,7 @@ let
             <li>------------------------------------------------------</li>
 
             <p><b>Description:</b></p>
-            <p>This function takes a table and column names for 'Start' and 'End' time intervals. It creates a new column [HourlyRows] for each row, showing hourly buckets with their overlap (in hours).</p>
+            <p>This function takes a table and column names for 'Start' and 'End' time intervals. It creates a new column [HourlyRows] for each row, showing hourly buckets with their overlap (in hours) and the percentage of the total duration that each overlap represents.</p>
 
             <p><b>Parameters:</b></p>
             <ul>
@@ -49,7 +49,7 @@ let
             </ul>
 
             <p><b>Returns:</b></p>
-            A table with an additional column [HourlyRows], each cell holding a breakdown of overlapping hours.
+            A table with an additional column [HourlyRows], each cell holding a breakdown of overlapping hours along with the percentage of each hourly overlap relative to the total duration.</p>
 
             <p><b>Formula Bar Example:</b></p>
             <code>ToHourlyRows(MyTable, ""Time Interval Start"", ""Time Interval End"")</code>
@@ -59,7 +59,7 @@ let
             [
                 Description = "Add hourly breakdown based on flexible column names.",
                 Code = "ToHourlyRows(#table({""Start"", ""End""}, {{#datetime(2024,1,1,13,15,0), #datetime(2024,1,1,15,45,0)}}), ""Start"", ""End"")",
-                Result = "A table with [HourlyRows] column containing detailed overlaps"
+                Result = "A table with [HourlyRows] column containing detailed overlaps and percentage values."
             ]
         }
     ],
@@ -98,24 +98,34 @@ let
                     HourOffsets = {0 .. NumberOfHourSlots - 1},
 
                     HourSlotRecords = 
-                        List.Transform(
-                            HourOffsets,
-                            (offset) =>
-                                let
-                                    ThisSlotStart = StartOfHour + #duration(0, offset, 0, 0),
-                                    ThisSlotEnd   = ThisSlotStart + #duration(0, 1, 0, 0),
-                                    OverlapStart  = if StartTime > ThisSlotStart then StartTime else ThisSlotStart,
-                                    OverlapEnd    = if EndTime < ThisSlotEnd then EndTime else ThisSlotEnd,
-                                    OverlapHours  =
-                                        if OverlapEnd > OverlapStart 
-                                        then Duration.TotalHours(OverlapEnd - OverlapStart)
-                                        else 0
-                                in
-                                    [
-                                        HourStart    = ThisSlotStart,
-                                        OverlapHours = OverlapHours
-                                    ]
-                        ),
+                        let
+                            TotalDurationHours = Duration.TotalHours(EndTime - StartTime),
+                            AdjustedTotalDuration = if TotalDurationHours = 0 then 1 else TotalDurationHours, // prevent division by zero
+                            Records = List.Transform(
+                                HourOffsets,
+                                (offset) =>
+                                    let
+                                        ThisSlotStart = StartOfHour + #duration(0, offset, 0, 0),
+                                        ThisSlotEnd   = ThisSlotStart + #duration(0, 1, 0, 0),
+                                        OverlapStart  = if StartTime > ThisSlotStart then StartTime else ThisSlotStart,
+                                        OverlapEnd    = if EndTime < ThisSlotEnd then EndTime else ThisSlotEnd,
+                                        OverlapHours  =
+                                            if OverlapEnd > OverlapStart 
+                                            then Duration.TotalHours(OverlapEnd - OverlapStart)
+                                            else 0,
+                                        Percentage =
+                                            if OverlapHours > 0
+                                            then OverlapHours / AdjustedTotalDuration
+                                            else 0
+                                    in
+                                        [
+                                            HourStart = ThisSlotStart,
+                                            OverlapHours = OverlapHours,
+                                            Percentage = Percentage
+                                        ]
+                            )
+                        in
+                            Records,
 
                     HourlyTable = Table.FromRecords(HourSlotRecords)
                 in
