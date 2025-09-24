@@ -72,11 +72,3 @@ Below, you will find other handy PowerQuery libraries:
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTI1OTk0MTgsMjU0MTIzMDI1LC0xMj
-AyNzUxNTQxLC0xNDk4NzQzNTI2LC0xMjcwMTgxNzY5LDExMjg2
-Mjc3OTksODY3ODY3OTA2LDUxMjg1MjE0LC02MzA0OTg0NjYsNj
-k5Mjk3MzIyLC0xMTYzNzkyMjY2LDEwOTYyMjg1OTcsMjEwNDc3
-MzcsMTMxNTgxODU0NiwxMTgyOTgyOTg2LC01MzIwNjA0MywtMT
-Y3NTQzNzY4OF19
--->

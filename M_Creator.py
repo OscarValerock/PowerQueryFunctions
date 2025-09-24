@@ -4,7 +4,7 @@ import re
 # Regex pattern to match Power Query functions (e.g., Namespace.Function) but not purely numeric patterns
 pattern =  r'\b\w+\.\w+\b'
 
-# Array of strings to exclude and exclude
+# Array of strings to exclude
 exclude_strings = [
                 'API.WorldBankCountries',
                 'Date.Today',
