@@ -8,9 +8,16 @@ let
     PAT = "", // Personal Access Token (PAT) for GitHub API https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
     QueryHeaders = if PAT <> ""
         then
-            [Authorization = "Bearer  " & PAT] 
+            [Authorization = "Bearer  " & PAT]
         else
             [],
+
+    // Wrapping Web.Contents in a same-signature function lets it be passed into
+    // Expression.Evaluate's environment without tripping the "can't use a Dynamic
+    // Data Source" Formula.Firewall error that occurs when Web.Contents itself is
+    // passed around as a first-class value.
+    #"Web.Contents wrapper" = (url as text, optional options as nullable record) as any =>
+        Web.Contents(url, options),
 
     #"Get Trees all trees" = Json.Document(
         Web.Contents(
@@ -70,7 +77,7 @@ let
                     Text.FromBinary(
                         Binary.FromText(#"Get functions fx")
                     ),
-                    [ 
+                    [
                         Any.Type = Any.Type,
                         Binary.FromText = Binary.FromText,
                         Binary.ToText = Binary.ToText,
@@ -110,6 +117,7 @@ let
                         DateTimeZone.ZoneMinutes = DateTimeZone.ZoneMinutes,
                         Day.Friday = Day.Friday,
                         Day.Monday = Day.Monday,
+                        Documentation.InspiredBy = Documentation.InspiredBy,
                         Duration.Days = Duration.Days,
                         Duration.From = Duration.From,
                         Duration.Hours = Duration.Hours,
@@ -233,8 +241,12 @@ let
                         Type.Is = Type.Is,
                         Value.ReplaceMetadata = Value.ReplaceMetadata,
                         Value.ReplaceType = Value.ReplaceType,
-                        Value.Type = Value.Type
-                        //,Web.Contents = Web.Contents //Unfortunately adding this function to the M code will create a dynamic error :(
+                        Value.Type = Value.Type,
+                        api.github = api.github,
+                        docs.github = docs.github,
+                        e.g = e.g,
+                        vnd.github = vnd.github,
+                        Web.Contents = #"Web.Contents wrapper"
                     ]
                 )
         in
