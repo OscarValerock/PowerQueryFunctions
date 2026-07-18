@@ -34,7 +34,10 @@ exclude_strings = [
                 'Text.ContainsAny',
                 'Text.ListFromString',
                 'Text.ReplaceMany',
-                'Web.Contents', #Unfortunately adding this function to the M code will create a dynamic error :(
+                'Web.Contents', # Passing Web.Contents itself into Expression.Evaluate's environment triggers
+                                # the "can't use a Dynamic Data Source" Formula.Firewall error. A wrapper function
+                                # (see #"Web.Contents wrapper" below) is mapped in via manual_mappings instead -
+                                # see https://community.powerbi.com/t5/Power-Query/Dynamic-data-sources-aren-t-refreshed-in-the-Power-BI-service/td-p/1563630
                 'api.openai',
                 'api.worldbank',
                 'bibb.pro',
@@ -60,6 +63,13 @@ manual_strings = [
     'Number.Abs'
  ]
 
+# Identifiers that can't just be mapped as `Name = Name` in the Expression.Evaluate
+# environment record and need a custom expression instead (see #"Web.Contents wrapper"
+# in the M_Code template below).
+manual_mappings = {
+    'Web.Contents': '#"Web.Contents wrapper"',
+}
+
 M_Code = """
 
 let
@@ -70,9 +80,16 @@ let
     PAT = "", // Personal Access Token (PAT) for GitHub API https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
     QueryHeaders = if PAT <> ""
         then
-            [Authorization = "Bearer  " & PAT] 
+            [Authorization = "Bearer  " & PAT]
         else
             [],
+
+    // Wrapping Web.Contents in a same-signature function lets it be passed into
+    // Expression.Evaluate's environment without tripping the "can't use a Dynamic
+    // Data Source" Formula.Firewall error that occurs when Web.Contents itself is
+    // passed around as a first-class value.
+    #"Web.Contents wrapper" = (url as text, optional options as nullable record) as any =>
+        Web.Contents(url, options),
 
     #"Get Trees all trees" = Json.Document(
         Web.Contents(
@@ -132,9 +149,8 @@ let
                     Text.FromBinary(
                         Binary.FromText(#"Get functions fx")
                     ),
-                    [ 
+                    [
 #TextToReplace
-                        //,Web.Contents = Web.Contents //Unfortunately adding this function to the M code will create a dynamic error :(
                     ]
                 )
         in
@@ -213,13 +229,10 @@ unique_functions = list(set(unique_functions))
 unique_functions.sort()
 
 print("Extracted Power Query functions (excluding numbers and specified strings):")
-result = ""
-for i, func in enumerate(unique_functions):
-    if i == len(unique_functions) - 1:
-        result += f"                        {func} = {func}"
-    else:
-        result += f"                        {func} = {func},\n"
+entries = [f"{func} = {func}" for func in unique_functions]
+entries += [f"{name} = {expression}" for name, expression in manual_mappings.items()]
 
+result = ",\n".join(f"                        {entry}" for entry in entries)
 
 M_Code = M_Code.replace("#TextToReplace", result)
 
